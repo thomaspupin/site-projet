@@ -460,6 +460,10 @@ body {
 .section-8 {
   min-height: 200vh;
 }
+.conteneur-sections {
+	width: 100vw;
+	height: auto; 
+}
 
 .transition {
 	margin: auto;
@@ -646,7 +650,7 @@ body {
     color: #a49a9a;
     border-radius: 5px;
     padding:20px;
-    max-width: 500px;
+    max-width: 600px;
 	text-align: center;
 }
 
@@ -683,24 +687,4 @@ body {
 }
 
 
-
-/* capture d'écran cool */
-
-.screenshots-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.screenshot img {
-    width: 100%;
-    border-radius: 10px;
-    transition: transform 0.3s;
-}
-
-.screenshot img:hover {
-    transform: scale(1.05);
-}
 
