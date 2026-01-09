@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // le texte animé "Hurle Plat"
-const text = "Hurle Plat"; 
+const text = "HurlePlat"; 
 
 const createLetterArray = (string) => {
   return string.split("");

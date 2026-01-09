@@ -82,7 +82,7 @@
 		radial-gradient(ellipse at 20% 80%, rgba(255, 215, 0, 0.05) 0%, transparent 40%);
 }
 
-/* Floating Particles */
+/* Particles */
 .particles {
 	position: fixed;
 	top: 0;
