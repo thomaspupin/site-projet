@@ -131,9 +131,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-// le texte animé "Hurle Plat"
+// le titre animé "HurlePlat"
 const text = "HurlePlat"; 
-
 const createLetterArray = (string) => {
   return string.split("");
 };
@@ -154,7 +153,7 @@ const createLetterLayers = (array) => {
   });
 };
 
-// ça crée les divs wrapper autour de chaque lettre
+// ça creér les divs wrapper autour de chaque lettre
 const createLetterContainers = (array) => {
   return array.map((item) => {
     let container = "";
