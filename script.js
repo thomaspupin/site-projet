@@ -119,6 +119,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+document.addEventListener('DOMContentLoaded', () => {
+  const navLinks = document.querySelectorAll('.nav-links ul li a');
+  const sections = [
+    { id: 'Accueil', link: null },
+    { id: 'univers', link: null },
+    { id: 'gameplay', link: null },
+    { id: 'personnages', link: null },
+    { id: 'equipe', link: null },
+    { id: 'telechargement', link: null }
+  ];
+  // Map links to sections
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && href.startsWith('#')) {
+      const sectionId = href.substring(1);
+      const sectionObj = sections.find(s => s.id === sectionId);
+      if (sectionObj) sectionObj.link = link;
+    }
+  });
+
+  function updateActiveNav() {
+    let found = false;
+    for (let i = 0; i < sections.length; i++) {
+      const section = document.getElementById(sections[i].id);
+      if (!section || !sections[i].link) continue;
+      const rect = section.getBoundingClientRect();
+      // Section is considered active if at least 40% visible
+      const visible = Math.max(0, Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0));
+      const ratio = visible / Math.min(window.innerHeight, rect.height);
+      if (ratio > 0.4 && !found) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        sections[i].link.classList.add('active');
+        found = true;
+      }
+    }
+    // If no section found, remove all
+    if (!found) navLinks.forEach(l => l.classList.remove('active'));
+  }
+  window.addEventListener('scroll', updateActiveNav);
+  window.addEventListener('resize', updateActiveNav);
+  updateActiveNav();
+});
 
 
 // le titre animé "HurlePlat"
