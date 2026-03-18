@@ -121,21 +121,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
 // le titre animé "HurlePlat"
 const text = "HurlePlat"; 
 const createLetterArray = (string) => {
   return string.split("");
-};
+}; 
 
 const createLetterLayers = (array) => {
   return array.map((letter) => {
@@ -185,7 +175,7 @@ outputLayers
     // puis anime les lettres
     let time = 250;
     return spans.map((span) => {
-      time += 75;
+      time += 25;
       setTimeout(() => {
         span.parentElement.style.top = "0px";
       }, time);
