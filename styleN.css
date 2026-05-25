@@ -17,6 +17,9 @@
 
 }
 
+
+/* ps: je sais c'est un bordel je mets tout à la suite */
+
 @font-face {
   font-family: "Audiowide"; 
   src: url("font/Audiowide.ttf") format("truetype");
@@ -25,7 +28,7 @@
   font-display: swap;
 }
 
-/* Backgrounds dynamiques */
+
 .bg-planete {
 	position: fixed;
 	top: 0; left: 0; width: 100%; height: 100%;
@@ -49,7 +52,7 @@
 
 
 
-/*  Background l'autre  */
+
 .grid-bg {
 	position: fixed;
 	top: 0;
@@ -76,7 +79,7 @@
 		radial-gradient(ellipse at 20% 80%, rgba(255, 215, 0, 0.05) 0%, transparent 40%);
 }
 
-/* Particles */
+
 .particles {
 	position: fixed;
 	top: 0;
@@ -249,9 +252,6 @@ body {
   	width: 35px;
 }
 
-/* ─────────────────────────────────────────
-   MENU MOBILE — bouton fermeture (global)
-───────────────────────────────────────── */
 .mobile-menu-close {
 	display: none !important;
 	position: absolute;
@@ -277,12 +277,9 @@ body {
 .mobile-menu-close:hover { opacity: 0.7; }
 
 
-/* ─────────────────────────────────────────
-   TABLETTE  ≤ 1000px
-───────────────────────────────────────── */
 @media screen and (max-width: 1000px) {
 
-	/* Scroll lock quand menu ouvert */
+
 	body.no-scroll {
 		overflow: hidden !important;
 		height: 100vh;
@@ -290,7 +287,6 @@ body {
 		width: 100vw;
 	}
 
-	/* Navbar */
 	.navbar {
 		padding: 0;
 		min-height: 60px;
@@ -317,7 +313,6 @@ body {
 		width: 30px;
 	}
 
-	/* Tiroir de navigation */
 	.nav-links {
 		position: fixed;
 		top: 0;
@@ -342,7 +337,7 @@ body {
 		display: flex !important;
 	}
 
-	/* Liste des liens */
+
 	.nav-links ul {
 		display: flex;
 		flex-direction: column;
@@ -383,12 +378,12 @@ body {
 		border-bottom: none;
 	}
 
-	/* Titre de section */
+
 	.section-title {
 		font-size: 2.2rem;
 	}
 
-	/* Titre animé HurlePlat */
+
 	#text {
 		font-size: 4.5em;
 	}
@@ -399,17 +394,14 @@ body {
 }
 
 
-/* ─────────────────────────────────────────
-   MOBILE  ≤ 600px
-───────────────────────────────────────── */
 @media screen and (max-width: 600px) {
 
-	/* Ancres sections */
+
 	#univers, #gameplay, #personnages, #equipe, #telechargement {
 		scroll-margin-top: 70px;
 	}
 
-	/* Navbar */
+
 	.navbar {
 		min-height: 55px;
 	}
@@ -431,7 +423,6 @@ body {
 		width: 26px;
 	}
 
-	/* Liens mobile */
 	.navbar .nav-links ul li a {
 		font-size: 1.1rem;
 		padding: 14px 20px;
@@ -440,12 +431,10 @@ body {
 		padding-left: 28px;
 	}
 
-	/* ── Titre section hero ── */
-	/* Titre JS : caché sur mobile */
 	#text {
 		display: none;
 	}
-	/* Titre HTML de remplacement : visible sur mobile */
+
 	.titre-mobile {
 		display: block;
 	}
@@ -457,7 +446,7 @@ body {
 		justify-content: center;
 	}
 
-	/* Flèches scroll */
+
 	.arrows span {
 		width: 5vw;
 		height: 5vw;
@@ -465,7 +454,7 @@ body {
 		margin: -8px;
 	}
 
-	/* Textes univers */
+
 	.vorn-content {
 		font-size: clamp(13px, 3.5vw, 16px);
 		padding: 14px;
@@ -473,14 +462,14 @@ body {
 		box-sizing: border-box;
 	}
 
-	/* Transition sticky */
+
 	.transition {
 		width: 92vw;
 		top: 3rem;
 		box-sizing: border-box;
 	}
 
-	/* ── Section Monstres ── */
+
 	.personnages-content {
 		padding: 16px 8px;
 		gap: 16px;
@@ -508,7 +497,7 @@ body {
 		gap: 8px;
 	}
 
-	/* ── Section Équipe ── */
+	/*  Section Équipe  */
 	.three {
 		margin: 30px 0;
 		gap: 24px;
@@ -534,7 +523,7 @@ body {
 		height: 160px;
 	}
 
-	/* ── Section Téléchargement ── */
+	/*  Section Téléchargement  */
 	.telechargement-content {
 		padding: 30px 14px 26px;
 		margin: 20px 12px 0;
@@ -555,7 +544,6 @@ body {
 		padding: 11px 20px;
 	}
 
-	/* ── Footer ── */
 	.footer {
 		padding: 20px 0 10px;
 	}
@@ -568,7 +556,6 @@ body {
 		height: 26px;
 	}
 
-	/* ── Hauteurs de sections ── */
 	.section-1 {
 		min-height: 140vh;
 	}
@@ -586,8 +573,6 @@ body {
 
 
 
-
-/* pour que les liens arrivent bien */
 #univers, #gameplay, #personnages, #equipe {
   scroll-margin-top: 180px;
 }
@@ -636,7 +621,6 @@ body {
 	position: sticky;
 	top: 5rem;
 	padding: 1.5rem 0;
-	/* Optionnel: effet de transition */
 	transition: box-shadow 0.2s;
 }
 .transition-1 { z-index: 10; }
@@ -676,7 +660,6 @@ body {
   transform: translateY(-50%);
 }
 
-/* Titre de remplacement affiché uniquement sur mobile */
 .titre-mobile {
   display: none;
   font-family: 'Audiowide', sans-serif;
@@ -702,8 +685,8 @@ body {
   display: inline-block;
   top: -900px;
   position: relative;
-  height: 150px; /* default */
-  width: 90px; /* default */
+  height: 150px; 
+  width: 90px; 
   transition: ease 0.9s all;
 }
 
@@ -772,7 +755,7 @@ body {
 	bottom: 0;
 	background-color: #202087;
 	height: 200px;
-  	height: 200px; /* zone de fade avant la fin */
+  	height: 200px; 
 }
 
 
@@ -1048,7 +1031,7 @@ body {
 .five .transition {
   transition: .5s cubic-bezier(.3, 0, 0, 1.3)
 }
-/* Fin equipe */
+
 
 /* Section téléchargement */
 .telechargement-content {
@@ -1092,7 +1075,7 @@ body {
   transform: scale(1.05);
 }
 
-/* Footer */
+
 .footer {
   width: 100%;
   max-width: 100%;
