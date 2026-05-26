@@ -11,7 +11,6 @@ window.addEventListener('resize', () => {
 });
 
 
-// Create Particles and Snowflakes
 function createParticles() {
    const container = document.getElementById('particles');
 
@@ -25,7 +24,7 @@ function createParticles() {
       container.appendChild(particle);
    }
 
-   // Snowflakes - reduced by half, 25% slower
+   // Snowflakes
    for (let i = 0; i < 10; i++) {
       const snowflake = document.createElement('div');
       snowflake.className = 'snowflake';
@@ -62,7 +61,7 @@ if (closeBtn) {
   });
 }
 
-// Fermer le menu quand on clique sur un lien nav
+
 document.querySelectorAll('.nav-links ul li a').forEach(link => {
   link.addEventListener('click', () => {
     navLinks.classList.remove('mobile-menu');
@@ -73,7 +72,7 @@ document.querySelectorAll('.nav-links ul li a').forEach(link => {
 
 
 
-//  zoom : l'image de la planète avance vers l'écran 
+
 function updateBackgroundZoom() {
    const planete = document.getElementById('bg-planete');
    const section1 = document.querySelector('.section-1');
@@ -81,7 +80,6 @@ function updateBackgroundZoom() {
    const scrollY = window.scrollY || window.pageYOffset;
    const section1Top = section1.offsetTop;
    const section1Height = section1.offsetHeight;
-   // Zoom de 1 à 1.35 sur toute la section 1
    let progress = Math.min(1, Math.max(0, (scrollY - section1Top) / section1Height));
    let scale = 1 + progress * 0.75;
    planete.style.transform = `scale(${scale})`;
@@ -89,7 +87,6 @@ function updateBackgroundZoom() {
 
 window.addEventListener('scroll', updateBackgroundZoom);
 window.addEventListener('resize', updateBackgroundZoom);
-// Gère l'affichage progressif des backgrounds selon la section
 function updateBackgrounds() {
    const planete = document.getElementById('bg-planete');
    const fond = document.getElementById('bg-fond');
@@ -100,11 +97,11 @@ function updateBackgrounds() {
    const section1Top = section1.offsetTop;
    const section1Height = section1.offsetHeight;
 
-   // Utilise le même progress que le zoom (0 = haut section 1, 1 = bas section 1)
+ 
    let progress = Math.min(1, Math.max(0, (scrollY - section1Top) / section1Height));
 
    let planeteOpacity = 1 - progress * 1.2; 
-   let fondOpacity = (progress - 0.7) / 0.3; // commence à apparaître à 70% du scroll section 1 t'a capté
+   let fondOpacity = (progress - 0.7) / 0.3; 
    planeteOpacity = Math.max(0, Math.min(1, planeteOpacity));
    fondOpacity = Math.max(0, Math.min(1, fondOpacity));
    planete.style.opacity = planeteOpacity;

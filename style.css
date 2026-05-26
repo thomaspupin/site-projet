@@ -1114,3 +1114,60 @@ body {
   color: var(--accent-gold);
   text-decoration: underline;
 }
+
+/* Gameplay gallery */
+.gameplay-container {
+	/* enlarged by 300% */
+	max-width: 3300px;
+	margin: 20px auto 60px;
+	box-sizing: border-box;
+	padding: 0 20px;
+	overflow-x: auto;
+}
+.gameplay-desc {
+	font-size: 1rem;
+	color: var(--text-secondary);
+	margin-bottom: 12px;
+}
+.gameplay-gallery {
+	display: grid;
+	/* each zone roughly 3x larger than before (320px -> 960px) */
+	grid-template-columns: repeat(auto-fit, minmax(960px, 1fr));
+	gap: 24px;
+	align-items: start;
+}
+.gameplay-card {
+	background: var(--bg-glass);
+	border: 1px solid var(--border-glass);
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+	display: flex;
+	flex-direction: column;
+}
+.gameplay-card:hover {
+	transform: translateY(-6px) scale(1.02);
+	box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+.gameplay-card img {
+	width: 100%;
+	height: auto;
+	object-fit: contain;
+	display: block;
+}
+.gameplay-card .caption {
+	padding: 12px 14px;
+	color: var(--text-secondary);
+	font-size: 0.95rem;
+	text-align: center;
+}
+@media screen and (max-width: 900px) {
+	/* reduce enlarged zones on medium screens */
+	.gameplay-gallery { grid-template-columns: repeat(auto-fit, minmax(520px, 1fr)); }
+}
+
+@media screen and (max-width: 600px) {
+	.gameplay-gallery { gap: 12px; }
+	.gameplay-container { padding: 0 12px; }
+}
